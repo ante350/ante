@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavana Mimoza | Vaš omiljeni kutak</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVIGACIJA -->
+    <header>
+        <nav class="navbar">
+            <a href="#pocetna" class="logo">Mimoza<span>.</span></a>
+
+            <div class="nav-links">
+                <a href="#pocetna">Početna</a>
+                <a href="#onama">O nama</a>
+                <a href="#meni">Meni</a>
+                <a href="#rezervacije">Rezervacije</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+
+            <a href="#rezervacije" class="nav-button">Rezerviraj stol</a>
+        </nav>
+    </header>
+
+    <!-- POČETNA -->
+    <section id="pocetna" class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">DOBRODOŠLI U KAVANU MIMOZA</p>
+            <h1>Mali predah za <br>velike trenutke.</h1>
+            <p class="hero-description">
+                Uživajte u mirisnoj kavi, ukusnim slasticama
+                i ugodnoj atmosferi našeg malog kutka.
+            </p>
+            <a href="#meni" class="main-button">Pogledaj naš meni</a>
+        </div>
+    </section>
+
+    <!-- O NAMA -->
+    <section id="onama" class="about section">
+        <div class="about-image"></div>
+
+        <div class="about-content">
+            <p class="section-subtitle">NAŠA PRIČA</p>
+            <h2>Mjesto gdje svaki trenutak postaje poseban.</h2>
+
+            <p>
+                Kavana Mimoza zamišljena je kao mjesto na kojem možete
+                usporiti, opustiti se i uživati u malim stvarima.
+            </p>
+
+            <p>
+                Bilo da dolazite na jutarnju kavu, doručak s prijateljima
+                ili popodnevni kolač, kod nas ćete uvijek pronaći
+                ugodnu atmosferu i dobro raspoloženje.
+            </p>
+
+            <a href="#kontakt" class="text-link">Pronađite nas →</a>
+        </div>
+    </section>
+
+    <!-- MENI -->
+    <section id="meni" class="menu-section section">
+        <div class="section-heading">
+            <p class="section-subtitle">PONUDA</p>
+            <h2>Naš meni</h2>
+            <p>Odaberite nešto po svom ukusu.</p>
+        </div>
+
+        <div class="menu-tabs">
+            <button class="menu-tab active" data-category="kava">Kava</button>
+            <button class="menu-tab" data-category="hladni">Hladni napitci</button>
+            <button class="menu-tab" data-category="slastice">Slastice</button>
+            <button class="menu-tab" data-category="dorucak">Doručak</button>
+        </div>
+
+        <div id="menuItems" class="menu-items"></div>
+    </section>
+
+    <!-- REZERVACIJE -->
+    <section id="rezervacije" class="reservation-section section">
+        <div class="section-heading">
+            <p class="section-subtitle">VAŠE MJESTO VAS ČEKA</p>
+            <h2>Rezervirajte stol</h2>
+            <p>Odaberite datum i jedan od dostupnih termina.</p>
+        </div>
+
+        <div class="reservation-container">
+
+            <div class="reservation-info">
+                <h3>Odaberite termin</h3>
+
+                <label for="reservationDate">Datum rezervacije</label>
+                <input type="date" id="reservationDate" required>
+
+                <div class="availability-heading">
+                    <span>Slobodni termini</span>
+                    <span class="availability-note">Zeleno – slobodno</span>
+                </div>
+
+                <div id="availableTimes" class="time-slots"></div>
+
+                <p id="selectedTime" class="selected-time">
+                    Niste odabrali termin.
+                </p>
+            </div>
+
+            <div class="reservation-form-container">
+                <h3>Vaši podaci</h3>
+
+                <form id="reservationForm">
+
+                    <div class="form-group">
+                        <label for="name">Ime i prezime</label>
+                        <input type="text" id="name" placeholder="Unesite ime i prezime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Broj telefona</label>
+                        <input type="tel" id="phone" placeholder="Unesite broj telefona" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="people">Broj osoba</label>
+                        <select id="people" required>
+                            <option value="">Odaberite broj osoba</option>
+                            <option value="1">1 osoba</option>
+                            <option value="2">2 osobe</option>
+                            <option value="3">3 osobe</option>
+                            <option value="4">4 osobe</option>
+                            <option value="5">5 osoba</option>
+                            <option value="6">6 osoba</option>
+                            <option value="7">7 osoba</option>
+                            <option value="8">8 osoba</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="note">Dodatna napomena</label>
+                        <textarea id="note" placeholder="Dodatne želje ili napomene"></textarea>
+                    </div>
+
+                    <button type="submit" class="reservation-button">
+                        Potvrdi rezervaciju
+                    </button>
+
+                    <p id="reservationMessage" class="reservation-message"></p>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="contact-section section">
+        <div class="section-heading">
+            <p class="section-subtitle">POSJETITE NAS</p>
+            <h2>Kontakt</h2>
+            <p>Veselimo se vašem dolasku!</p>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-card">
+                <h3>Adresa</h3>
+                <p>Ulica sunca 12</p>
+                <p>Split, Hrvatska</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Radno vrijeme</h3>
+                <p>Ponedjeljak – Nedjelja</p>
+                <p>07:00 – 22:00</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Kontakt</h3>
+                <p>+385 21 555 010</p>
+                <p>info@kavanamimoza.hr</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PODNOŽJE -->
+    <footer>
+        <a href="#pocetna" class="footer-logo">Mimoza<span>.</span></a>
+        <p>© 2026 Kavana Mimoza. Sva prava pridržana.</p>
+        <a href="#pocetna">Povratak na vrh ↑</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
